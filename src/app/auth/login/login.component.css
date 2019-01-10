@@ -1,0 +1,19 @@
+mat-card {
+    width: 25%;
+    min-width: 250px;
+    float: none;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+#logo_div {
+    display: table;
+    padding-top: 5%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#logo_img {
+    width: 10em;
+    height: 10em;
+}

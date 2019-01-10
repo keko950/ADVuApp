@@ -1,0 +1,32 @@
+<mat-toolbar [ngStyle]="{'background': navColor}" class="full-nav" color="primary">
+    <img [src]="image">
+    <span *ngFor="let button of buttons">
+        <a [routerLink]="button.link"><button mat-button color="button.color">{{button.title}}</button></a>
+    </span>
+    
+    <span class="example-fill-remaining-space"></span>
+    <span *ngIf="logged">
+        <a [routerLink]="profile.link"><button mat-button><i class="fa fa-user-circle  fa-3x"></i></button></a>
+    </span>
+</mat-toolbar>
+
+<mat-toolbar [ngStyle]="{'background': navColor}" class="responsive-nav" color="primary">
+        <img [src]="image">
+        <span class="example-fill-remaining-space"></span>
+        <button mat-button [matMenuTriggerFor]="menu"><i class="fa fa-bars"></i></button>
+        <mat-menu id="responsive-menu" #menu="matMenu">
+                <span *ngFor="let button of buttons">
+                    <a [routerLink]="button.link"><button mat-button color="button.color">{{button.title}}</button></a>
+                </span>
+                <span *ngIf="logged">
+                    <a [routerLink]="profile.link"><button mat-button>{{profile.title}}</button></a>
+                </span>
+        </mat-menu>
+
+    </mat-toolbar>
+    
+
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

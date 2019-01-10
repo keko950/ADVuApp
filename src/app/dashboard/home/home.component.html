@@ -1,0 +1,56 @@
+<app-navbar [navtitle]="title" [buttons]="homeButtons" [logged]="logged"></app-navbar>
+<mat-card id="metrics">
+    <mat-card-title><h2>Metrics</h2></mat-card-title>
+    <mat-card-content>
+            <div id="chart">
+                    <canvas
+                        baseChart
+                        [chartType]="'line'"
+                        [datasets]="chartData"
+                        [labels]="chartLabels"
+                        [options]="chartOptions"
+                        [legend]="true"
+                        [colors]="lineChartColors">
+                    </canvas>
+                  </div>
+    </mat-card-content>
+</mat-card>
+<div class="block-container">
+    <mat-card id="stats">
+        <mat-card-title><h2>Stats</h2></mat-card-title>
+        <mat-card-content>
+                <mat-list>
+                        <mat-list-item><p>Earn: {{ earn }}</p></mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item><p>Impressions: {{ impressions }}</p></mat-list-item>
+                        
+                      </mat-list>
+                      
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card id="datepicker">
+        <mat-card-title><h2>Date</h2></mat-card-title>
+        <mat-card-content>
+        <mat-form-field>
+                <input id="inp" matInput [matDatepicker]="picker1" placeholder="From" (dateChange)="addEvent($event)">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field>
+                <input id="inp" matInput [matDatepicker]="picker2" placeholder="To" (dateChange)="addEvent2($event)">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card id="localization">
+        <mat-card-title><h2>Localization</h2></mat-card-title>
+        <mat-card-content>
+            <span *ngFor="let flag of flags">
+                <a (click)="loadChart(flag.loc)"><i class="flag"><img [src]="flag.image"></i></a>
+            </span>
+        </mat-card-content>
+    </mat-card>
+</div>

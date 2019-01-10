@@ -1,0 +1,83 @@
+body {
+  background: #f12711;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+    margin: 0;
+    font-family: Roboto, sans-serif;
+  }
+  p {
+    color:#fffcfd;
+    margin-top: 1em;
+  }
+
+  mat-card {
+    background: #3f51b5;
+    color:#fffcfd;
+    max-width: 80%;
+    min-width: 200px;
+  }
+  #metrics {
+    margin: 2em auto;
+    text-align: center;
+    }
+
+    #chart {
+      width: 100%;
+      color: #fffcfd;
+    }
+  
+
+  mat-toolbar-row {
+    justify-content: space-between;
+  }
+  
+  #stats, #datepicker,   #localization{
+    min-width: 260px;
+    max-width: 20%;
+    margin-right: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+    display:inline-table;
+    height:230px;
+  }
+
+  .flag {
+
+    margin: 1em;
+  }
+
+  .block-container {
+    margin: 0 auto;
+    max-width: 80%;
+    text-align: left;
+  }
+  :host ::ng-deep span {
+    color: white;
+  }
+  
+  :host ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
+    color: white;
+  }
+  .done {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+  }
+
+  @media only screen and (min-width: 400px) {
+    #stats {
+      max-width: 80%;
+    }
+
+  }
+
+
+  @media only screen and (max-width: 370px) {
+    #stats, #datepicker,   #localization{
+      min-width: 100%;
+    }
+
+  }
